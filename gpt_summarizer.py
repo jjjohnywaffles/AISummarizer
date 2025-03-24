@@ -31,10 +31,10 @@ def summarize_with_gpt(text):
         summary_text = response.choices[0].message.content
         print(f"GPT structured response received: {summary_text}")
 
-        # ✅ Strip markdown code block formatting
+        # Strip markdown code block formatting
         cleaned_text = re.sub(r'```json|```', '', summary_text).strip()
 
-        # ✅ Parse the cleaned JSON
+        # Parse the cleaned JSON
         summary_json = json.loads(cleaned_text)
         return summary_json
 
