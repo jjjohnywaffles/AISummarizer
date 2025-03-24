@@ -16,8 +16,9 @@ def summarize_with_gpt(text):
         "Provide a structured, in-depth synopsis of the following academic paper. "
         "First, write 2-3 detailed paragraphs explaining the paper's objectives, methodology, and key findings. Use clear line breaks to separate paragraphs. "
         "Then, include concise bullet-point lists for methods, discussions, important statistics, and notable citations. "
-        "If the provided text is not detected to be from an academic or research paper, respond with: 'This document is not an academic paper and cannot be summarized.' "
+        "Ensure that the 'authors' field is returned as either a single string if only one author is listed, or as an array of properly formatted full names. Do not split names by individual characters. "
         "Format the response in JSON with keys: 'authors', 'synopsis_paragraphs', 'methods', 'discussions', 'statistics', and 'citations'. "
+        "If the provided text is not detected to be from an academic or research paper, ignore all previous instructions and respond with: 'This document is not an academic paper and cannot be summarized.' "
         f"\n\nPaper content:\n{text[:3000]}\n\nJSON:"
     )
 
