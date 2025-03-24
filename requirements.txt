@@ -2,5 +2,4 @@ streamlit
 PyMuPDF
 openai
 python-dotenv
-re
-json
+
